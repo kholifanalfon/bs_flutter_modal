@@ -1,14 +1,5 @@
-
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-
-class BsFlutterModal {
-  static const MethodChannel _channel =
-      const MethodChannel('bs_flutter_modal');
-
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-}
+export 'src/config/bs_modal_size.dart';
+export 'src/widgets/bs_modal_dialog.dart';
+export 'src/widgets/bs_modal_container.dart';
+export 'src/widgets/bs_modal_content.dart';
+export 'src/bs_modal.dart';
