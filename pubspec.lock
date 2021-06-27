@@ -23,7 +23,7 @@ packages:
     source: hosted
     version: "1.0.1"
   bs_flutter_utils:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: bs_flutter_utils
       url: "https://pub.dartlang.org"
