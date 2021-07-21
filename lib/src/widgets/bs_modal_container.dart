@@ -73,16 +73,15 @@ class BsModalContainer extends StatelessWidget {
                   : Container(
                 margin: EdgeInsets.only(
                     right: padding != null ? padding!.right : 15.0),
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    minimumSize: Size(20.0, 20.0),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () {
+                      if (onClose != null) onClose!();
+                      else Navigator.pop(context);
+                    },
+                    child: Icon(Icons.close, size: 14.0, color: BsColor.color),
                   ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                    if (onClose != null) onClose!();
-                  },
-                  child:
-                  Icon(Icons.close, size: 14.0, color: BsColor.color),
                 ),
               )
             ],
@@ -111,7 +110,7 @@ class BsModalContainer extends StatelessWidget {
               ? Container()
               : Container(
             padding: padding == null ? EdgeInsets.all(15.0) : padding,
-            child: Column(
+            child: Row(
               crossAxisAlignment: crossAxisAlignment,
               mainAxisAlignment: mainAxisAlignment,
               children: actions,

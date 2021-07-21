@@ -1,10 +1,11 @@
 import 'package:bs_flutter_buttons/bs_flutter_buttons.dart';
 import 'package:bs_flutter_modal/bs_flutter_modal.dart';
 import 'package:bs_flutter_responsive/bs_flutter_responsive.dart';
+import 'package:bs_flutter_selectbox/bs_flutter_selectbox.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -13,6 +14,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  BsSelectBoxController _select = BsSelectBoxController(multiple: true, options: [
+    BsSelectBoxOption(value: 1, text: Text('1')),
+    BsSelectBoxOption(value: 2, text: Text('2')),
+    BsSelectBoxOption(value: 3, text: Text('3')),
+    BsSelectBoxOption(value: 4, text: Text('4')),
+    BsSelectBoxOption(value: 5, text: Text('5')),
+    BsSelectBoxOption(value: 6, text: Text('6')),
+  ]);
 
   @override
   void initState() {
@@ -46,10 +56,16 @@ class _MyAppState extends State<MyApp> {
                             size: BsModalSize.sm,
                             child: BsModalContent(
                               children: [
+                                BsModalContainer(title: Text('Content'), closeButton: true, onClose: () {
+                                  Navigator.pop(context);
+                                }),
                                 BsModalContainer(
-                                    title: Text('Content'), closeButton: true),
-                                BsModalContainer(
-                                  child: Column(children: [Text('Content')]),
+                                  child: Column(children: [
+                                    BsSelectBox(
+                                      hintTextLabel: 'Pilih salah satu',
+                                      selectBoxController: _select,
+                                    )
+                                  ]),
                                 ),
                                 BsModalContainer(
                                   crossAxisAlignment: CrossAxisAlignment.end,
