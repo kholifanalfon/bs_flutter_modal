@@ -29,19 +29,18 @@ class BsModalContent extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-            child: Container(
-              decoration: decoration != null
-                  ? decoration
-                  : BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
-              ),
-              child: Column(
-                crossAxisAlignment: crossAxisAlignment,
-                mainAxisAlignment: mainAxisAlignment,
-                children: children,
-              ),
-            ))
+          child: Container(
+            decoration: decoration != null ? decoration : BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+            ),
+            child: Column(
+              crossAxisAlignment: crossAxisAlignment,
+              mainAxisAlignment: mainAxisAlignment,
+              children: children,
+            ),
+          )
+        )
       ],
     );
   }

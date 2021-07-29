@@ -19,11 +19,7 @@ class BsModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scrollbar(child: SingleChildScrollView(
-      child: Column(
-        children: [
-          Container(child: dialog)
-        ],
-      ),
+      child: Container(child: dialog),
     ));
   }
 }

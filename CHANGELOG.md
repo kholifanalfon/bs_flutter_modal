@@ -1,7 +1,7 @@
-## 1.0.3
+## 1.0.4
 
 * Minor bug fixed
-* Mobile scrollable bug fixed
+* Scrollable bug fixed
 
 ## 1.0.0
 

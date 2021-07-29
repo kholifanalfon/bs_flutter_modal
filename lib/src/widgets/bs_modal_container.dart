@@ -53,26 +53,21 @@ class BsModalContainer extends StatelessWidget {
         children: [
           Row(
             children: [
-              title == null
-                  ? Container()
-                  : DefaultTextStyle(
+              title == null ? Container() : DefaultTextStyle(
                 style: TextStyle(
                   fontSize: 16.0,
                   color: BsColor.color,
                   fontWeight: FontWeight.bold,
                 ).merge(titleStyle),
                 child: Expanded(
-                    child: Container(
-                        padding: padding != null
-                            ? padding
-                            : EdgeInsets.all(15.0),
-                        child: title)),
+                  child: Container(
+                    padding: padding != null ? padding : EdgeInsets.all(15.0),
+                    child: title
+                  )
+                ),
               ),
-              !closeButton
-                  ? Container(width: 0)
-                  : Container(
-                margin: EdgeInsets.only(
-                    right: padding != null ? padding!.right : 15.0),
+              !closeButton ? Container(width: 0) : Container(
+                margin: EdgeInsets.only(right: padding != null ? padding!.right : 15.0),
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
@@ -86,29 +81,25 @@ class BsModalContainer extends StatelessWidget {
               )
             ],
           ),
-          child == null
-              ? Container()
-              : Container(
+          child == null ? Container() : Container(
             decoration: BoxDecoration(
-                border: Border(
-                    bottom: BorderSide(color: BsColor.borderColor))),
+              border: Border(
+                bottom: BorderSide(color: BsColor.borderColor)
+              )
+            ),
           ),
-          child == null
-              ? Container()
-              : Container(
+          child == null ? Container() : Container(
             padding: padding == null ? EdgeInsets.all(15.0) : padding,
             child: child,
           ),
-          actions.length == 0
-              ? Container()
-              : Container(
+          actions.length == 0 ? Container() : Container(
             decoration: BoxDecoration(
-                border: Border(
-                    bottom: BorderSide(color: BsColor.borderColor))),
+              border: Border(
+                bottom: BorderSide(color: BsColor.borderColor)
+              )
+            ),
           ),
-          actions.length == 0
-              ? Container()
-              : Container(
+          actions.length == 0 ? Container() : Container(
             padding: padding == null ? EdgeInsets.all(15.0) : padding,
             child: Row(
               crossAxisAlignment: crossAxisAlignment,

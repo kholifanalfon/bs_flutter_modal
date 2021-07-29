@@ -99,7 +99,12 @@ class _MyAppState extends State<MyApp> {
                                 BsModalContainer(
                                     title: Text('Content'), closeButton: true),
                                 BsModalContainer(
-                                  child: Column(children: [Text('Content')]),
+                                  child: Column(
+                                    children: [
+                                      Container(height: 1000),
+                                      Text('Content')
+                                    ]
+                                  ),
                                 ),
                                 BsModalContainer(
                                   crossAxisAlignment: CrossAxisAlignment.end,

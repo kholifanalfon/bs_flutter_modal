@@ -34,26 +34,15 @@ class BsModalDialog extends StatelessWidget {
       elevation: 0,
       backgroundColor: Color(0x00000000),
       child: Container(
-        height: MediaQuery.of(context).size.height,
         padding: EdgeInsets.all(15.0),
         child: Column(
+          crossAxisAlignment: crossAxisAlignment,
+          mainAxisAlignment: mainAxisAlignment,
           children: [
-            Expanded(
-                child: Column(
-                  crossAxisAlignment: crossAxisAlignment,
-                  mainAxisAlignment: mainAxisAlignment,
-                  children: [
-                    Scrollbar(
-                        child: SingleChildScrollView(
-                          child: Container(
-                            width: size.breakPoints.contains(breakPoint.state)
-                                ? size.width
-                                : BsModalSize.widthMd,
-                            child: child,
-                          ),
-                        ))
-                  ],
-                ))
+            Container(
+              width: size.breakPoints.contains(breakPoint.state) ? size.width : BsModalSize.widthMd,
+              child: child,
+            ),
           ],
         ),
       ),
