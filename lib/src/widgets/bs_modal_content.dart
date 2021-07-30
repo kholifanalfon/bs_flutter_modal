@@ -26,22 +26,17 @@ class BsModalContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Container(
-            decoration: decoration != null ? decoration : BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
-            ),
-            child: Column(
-              crossAxisAlignment: crossAxisAlignment,
-              mainAxisAlignment: mainAxisAlignment,
-              children: children,
-            ),
-          )
-        )
-      ],
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: decoration != null ? decoration : BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+      ),
+      child: Column(
+        crossAxisAlignment: crossAxisAlignment,
+        mainAxisAlignment: mainAxisAlignment,
+        children: children,
+      ),
     );
   }
 }

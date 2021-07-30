@@ -29,7 +29,7 @@ Modal will be show using `showDialog`, because `BsModal` is a `Dialog` widget
       context: context,
       dialog: BsModalDialog(
         size: BsModalSize.sm,
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: crossAxisAlignment.center,
         child: BsModalContent(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -70,4 +70,4 @@ Modal will be show using `showDialog`, because `BsModal` is a `Dialog` widget
 - `BsModalContainer` is children from `BsModalContent`
 - Change `size` properties to change modal size
 - `BsModalContainer` can be use as modal-header, modal-body and modal-footer
-- To set `BsModalContent` to centered, you can modify `mainAxisAlignment` on `BsModalDialog` properties
+- To set `BsModalContent` to centered, you can modify `crossAxisAlignment` on `BsModalDialog` properties

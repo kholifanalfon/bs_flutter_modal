@@ -10,7 +10,7 @@ class BsModalDialog extends StatelessWidget {
     this.size = BsModalSize.md,
     this.child,
     this.crossAxisAlignment = CrossAxisAlignment.start,
-    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisAlignment = MainAxisAlignment.center,
   }) : super(key: key);
 
   /// define size of [BsModalDialog]
@@ -29,23 +29,35 @@ class BsModalDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     BreakPoint breakPoint = BreakPoint.of(context);
 
-    return Dialog(
-      insetPadding: EdgeInsets.zero,
-      elevation: 0,
-      backgroundColor: Color(0x00000000),
-      child: Container(
-        padding: EdgeInsets.all(15.0),
-        child: Column(
-          crossAxisAlignment: crossAxisAlignment,
-          mainAxisAlignment: mainAxisAlignment,
-          children: [
-            Container(
-              width: size.breakPoints.contains(breakPoint.state) ? size.width : BsModalSize.widthMd,
-              child: child,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Dialog(
+          insetPadding: EdgeInsets.zero,
+          elevation: 0,
+          backgroundColor: Color(0x00000000),
+          child: Container(
+            height: constraints.maxHeight,
+            child: Row(
+              crossAxisAlignment: crossAxisAlignment,
+              children: [
+                Expanded(child: Scrollbar(
+                  child: SingleChildScrollView(
+                    child: Row(
+                      mainAxisAlignment: mainAxisAlignment,
+                      children: [
+                        Container(
+                          width: size.breakPoints.contains(breakPoint.state) ? size.width : BsModalSize.widthMd,
+                          child: child,
+                        )
+                      ],
+                    ),
+                  ),
+                ))
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

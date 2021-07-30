@@ -14,8 +14,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
-  BsSelectBoxController _select = BsSelectBoxController(multiple: true, options: [
+  BsSelectBoxController _select =
+      BsSelectBoxController(multiple: true, options: [
     BsSelectBoxOption(value: 1, text: Text('1')),
     BsSelectBoxOption(value: 2, text: Text('2')),
     BsSelectBoxOption(value: 3, text: Text('3')),
@@ -51,39 +51,43 @@ class _MyAppState extends State<MyApp> {
                     onPressed: () => showDialog(
                         context: context,
                         builder: (context) => BsModal(
-                          context: context,
-                          dialog: BsModalDialog(
-                            size: BsModalSize.sm,
-                            child: BsModalContent(
-                              children: [
-                                BsModalContainer(title: Text('Content'), closeButton: true, onClose: () {
-                                  Navigator.pop(context);
-                                }),
-                                BsModalContainer(
-                                  child: Column(children: [
-                                    BsSelectBox(
-                                      hintTextLabel: 'Pilih salah satu',
-                                      selectBoxController: _select,
-                                    )
-                                  ]),
-                                ),
-                                BsModalContainer(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  actions: [
-                                    BsButton(
-                                      style: BsButtonStyle.danger,
-                                      label: Text('Close Modal'),
-                                      prefixIcon: Icons.close,
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
+                              context: context,
+                              dialog: BsModalDialog(
+                                size: BsModalSize.sm,
+                                child: BsModalContent(
+                                  children: [
+                                    BsModalContainer(
+                                        title: Text('Content'),
+                                        closeButton: true,
+                                        onClose: () {
+                                          Navigator.pop(context);
+                                        }),
+                                    BsModalContainer(
+                                      child: Column(children: [
+                                        BsSelectBox(
+                                          hintTextLabel: 'Pilih salah satu',
+                                          selectBoxController: _select,
+                                        )
+                                      ]),
+                                    ),
+                                    BsModalContainer(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      actions: [
+                                        BsButton(
+                                          style: BsButtonStyle.danger,
+                                          label: Text('Close Modal'),
+                                          prefixIcon: Icons.close,
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                        )
+                                      ],
                                     )
                                   ],
-                                )
-                              ],
-                            ),
-                          ),
-                        )),
+                                ),
+                              ),
+                            )),
                   ),
                   BsButton(
                     style: BsButtonStyle.primary,
@@ -92,37 +96,37 @@ class _MyAppState extends State<MyApp> {
                     onPressed: () => showDialog(
                         context: context,
                         builder: (context) => BsModal(
-                          context: context,
-                          dialog: BsModalDialog(
-                            child: BsModalContent(
-                              children: [
-                                BsModalContainer(
-                                    title: Text('Content'), closeButton: true),
-                                BsModalContainer(
-                                  child: Column(
-                                    children: [
-                                      Container(height: 1000),
-                                      Text('Content')
-                                    ]
-                                  ),
-                                ),
-                                BsModalContainer(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  actions: [
-                                    BsButton(
-                                      style: BsButtonStyle.danger,
-                                      label: Text('Close Modal'),
-                                      prefixIcon: Icons.close,
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
+                              context: context,
+                              dialog: BsModalDialog(
+                                child: BsModalContent(
+                                  children: [
+                                    BsModalContainer(
+                                        title: Text('Content'),
+                                        closeButton: true),
+                                    BsModalContainer(
+                                      child: Column(children: [
+                                        Container(height: 1000),
+                                        Text('Content')
+                                      ]),
+                                    ),
+                                    BsModalContainer(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      actions: [
+                                        BsButton(
+                                          style: BsButtonStyle.danger,
+                                          label: Text('Close Modal'),
+                                          prefixIcon: Icons.close,
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                        )
+                                      ],
                                     )
                                   ],
-                                )
-                              ],
-                            ),
-                          ),
-                        )),
+                                ),
+                              ),
+                            )),
                   ),
                   BsButton(
                     style: BsButtonStyle.primary,
@@ -131,33 +135,36 @@ class _MyAppState extends State<MyApp> {
                     onPressed: () => showDialog(
                         context: context,
                         builder: (context) => BsModal(
-                          context: context,
-                          dialog: BsModalDialog(
-                            size: BsModalSize.lg,
-                            child: BsModalContent(
-                              children: [
-                                BsModalContainer(
-                                    title: Text('Content'), closeButton: true),
-                                BsModalContainer(
-                                  child: Column(children: [Text('Content')]),
-                                ),
-                                BsModalContainer(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  actions: [
-                                    BsButton(
-                                      style: BsButtonStyle.danger,
-                                      label: Text('Close Modal'),
-                                      prefixIcon: Icons.close,
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
+                              context: context,
+                              dialog: BsModalDialog(
+                                size: BsModalSize.lg,
+                                child: BsModalContent(
+                                  children: [
+                                    BsModalContainer(
+                                        title: Text('Content'),
+                                        closeButton: true),
+                                    BsModalContainer(
+                                      child:
+                                          Column(children: [Text('Content')]),
+                                    ),
+                                    BsModalContainer(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      actions: [
+                                        BsButton(
+                                          style: BsButtonStyle.danger,
+                                          label: Text('Close Modal'),
+                                          prefixIcon: Icons.close,
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                        )
+                                      ],
                                     )
                                   ],
-                                )
-                              ],
-                            ),
-                          ),
-                        )),
+                                ),
+                              ),
+                            )),
                   ),
                   BsButton(
                     style: BsButtonStyle.primary,
@@ -166,33 +173,36 @@ class _MyAppState extends State<MyApp> {
                     onPressed: () => showDialog(
                         context: context,
                         builder: (context) => BsModal(
-                          context: context,
-                          dialog: BsModalDialog(
-                            size: BsModalSize.xl,
-                            child: BsModalContent(
-                              children: [
-                                BsModalContainer(
-                                    title: Text('Content'), closeButton: true),
-                                BsModalContainer(
-                                  child: Column(children: [Text('Content')]),
-                                ),
-                                BsModalContainer(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  actions: [
-                                    BsButton(
-                                      style: BsButtonStyle.danger,
-                                      label: Text('Close Modal'),
-                                      prefixIcon: Icons.close,
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
+                              context: context,
+                              dialog: BsModalDialog(
+                                size: BsModalSize.xl,
+                                child: BsModalContent(
+                                  children: [
+                                    BsModalContainer(
+                                        title: Text('Content'),
+                                        closeButton: true),
+                                    BsModalContainer(
+                                      child:
+                                          Column(children: [Text('Content')]),
+                                    ),
+                                    BsModalContainer(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      actions: [
+                                        BsButton(
+                                          style: BsButtonStyle.danger,
+                                          label: Text('Close Modal'),
+                                          prefixIcon: Icons.close,
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                        )
+                                      ],
                                     )
                                   ],
-                                )
-                              ],
-                            ),
-                          ),
-                        )),
+                                ),
+                              ),
+                            )),
                   ),
                   BsButton(
                     style: BsButtonStyle.primary,
@@ -201,33 +211,36 @@ class _MyAppState extends State<MyApp> {
                     onPressed: () => showDialog(
                         context: context,
                         builder: (context) => BsModal(
-                          context: context,
-                          dialog: BsModalDialog(
-                            size: BsModalSize.xxl,
-                            child: BsModalContent(
-                              children: [
-                                BsModalContainer(
-                                    title: Text('Content'), closeButton: true),
-                                BsModalContainer(
-                                  child: Column(children: [Text('Content')]),
-                                ),
-                                BsModalContainer(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  actions: [
-                                    BsButton(
-                                      style: BsButtonStyle.danger,
-                                      label: Text('Close Modal'),
-                                      prefixIcon: Icons.close,
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
+                              context: context,
+                              dialog: BsModalDialog(
+                                size: BsModalSize.xxl,
+                                child: BsModalContent(
+                                  children: [
+                                    BsModalContainer(
+                                        title: Text('Content'),
+                                        closeButton: true),
+                                    BsModalContainer(
+                                      child:
+                                          Column(children: [Text('Content')]),
+                                    ),
+                                    BsModalContainer(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      actions: [
+                                        BsButton(
+                                          style: BsButtonStyle.danger,
+                                          label: Text('Close Modal'),
+                                          prefixIcon: Icons.close,
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                        )
+                                      ],
                                     )
                                   ],
-                                )
-                              ],
-                            ),
-                          ),
-                        )),
+                                ),
+                              ),
+                            )),
                   ),
                   BsButton(
                     style: BsButtonStyle.primary,
@@ -236,38 +249,40 @@ class _MyAppState extends State<MyApp> {
                     onPressed: () => showDialog(
                         context: context,
                         builder: (context) => BsModal(
-                          context: context,
-                          dialog: BsModalDialog(
-                            size: BsModalSize.sm,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            child: BsModalContent(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                              ),
-                              children: [
-                                BsModalContainer(
-                                    title: Text('Content'), closeButton: true),
-                                BsModalContainer(
-                                  child: Column(children: [Text('Content')]),
-                                ),
-                                BsModalContainer(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  actions: [
-                                    BsButton(
-                                      style: BsButtonStyle.danger,
-                                      label: Text('Close Modal'),
-                                      prefixIcon: Icons.close,
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
+                              context: context,
+                              dialog: BsModalDialog(
+                                size: BsModalSize.sm,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                child: BsModalContent(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                  ),
+                                  children: [
+                                    BsModalContainer(
+                                        title: Text('Content'),
+                                        closeButton: true),
+                                    BsModalContainer(
+                                      child:
+                                          Column(children: [Text('Content')]),
+                                    ),
+                                    BsModalContainer(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      actions: [
+                                        BsButton(
+                                          style: BsButtonStyle.danger,
+                                          label: Text('Close Modal'),
+                                          prefixIcon: Icons.close,
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                        )
+                                      ],
                                     )
                                   ],
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                    ),
+                                ),
+                              ),
+                            )),
                   ),
                 ],
               ),
