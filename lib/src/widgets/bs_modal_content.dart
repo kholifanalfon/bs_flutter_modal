@@ -7,6 +7,7 @@ class BsModalContent extends StatelessWidget {
   const BsModalContent({
     Key? key,
     this.decoration,
+    this.padding = const EdgeInsets.all(20.0),
     this.crossAxisAlignment = CrossAxisAlignment.start,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.children = const [],
@@ -14,6 +15,8 @@ class BsModalContent extends StatelessWidget {
 
   /// define decoration [BsModalContent]
   final Decoration? decoration;
+
+  final EdgeInsets padding;
 
   /// define crossAxisAlignment of [BsModalContent]
   final CrossAxisAlignment crossAxisAlignment;
@@ -27,7 +30,7 @@ class BsModalContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(15.0),
+      margin: padding,
       decoration: decoration != null ? decoration : BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(5.0)),
