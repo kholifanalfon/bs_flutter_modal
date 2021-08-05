@@ -28,7 +28,6 @@ class BsModalDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     BreakPoint breakPoint = BreakPoint.of(context);
-
     return LayoutBuilder(
       builder: (context, constraints) {
         return Dialog(
@@ -46,7 +45,7 @@ class BsModalDialog extends StatelessWidget {
                       mainAxisAlignment: mainAxisAlignment,
                       children: [
                         Container(
-                          width: size.breakPoints.contains(breakPoint.state) ? size.width : BsModalSize.widthMd,
+                          width: size.breakPoints.contains(breakPoint.state) ? size.width : constraints.maxWidth,
                           child: child,
                         )
                       ],

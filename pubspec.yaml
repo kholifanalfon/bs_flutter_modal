@@ -1,6 +1,6 @@
 name: bs_flutter_modal
 description: Use flutter bootstrap modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/kholifanalfon/bs_flutter_modal.git
 
 environment:
@@ -12,9 +12,6 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-
-  bs_flutter_buttons: ^1.0.1
-  bs_flutter_utils: ^1.0.0
 
 dev_dependencies:
   flutter_test:
